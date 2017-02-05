@@ -1,0 +1,38 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<dom-module id="es6-polymer-element-template">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+
+  </template>
+
+  <script>
+    class Es6PolymerElementTemplate {
+
+      beforeRegister() {
+        this.is = 'es6-polymer-element-template';
+
+        this.properties = {
+          data: {
+            type: Object
+          }
+          title: {
+            type: String,
+            computed: '_computeTitle(data)'
+          }
+        };
+      }
+
+      _computeTitle(data) {
+        return data.title;
+      }
+     
+    }
+
+    Polymer(Es6PolymerElementTemplate);
+  </script>
+</dom-module>
